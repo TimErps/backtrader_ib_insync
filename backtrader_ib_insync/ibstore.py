@@ -475,10 +475,10 @@ class IBStore(with_metaclass(MetaSingleton, object)):
         what = what or 'TRADES'
         
         q = self.getTickerQueue()
-
+        # + ' US/Eastern'
         histdata = self.ib.reqHistoricalData(
                                 contract,
-                                intdate.strftime('%Y%m%d %H:%M:%S') + ' US/Eastern',
+                                intdate.strftime('%Y%m%d-%H:%M:%S'),
                                 duration,
                                 barsize,
                                 what,
@@ -511,10 +511,10 @@ class IBStore(with_metaclass(MetaSingleton, object)):
         # self.histfmt[tickerId] = tframe >= TimeFrame.Days
         # self.histsend[tickerId] = sessionend
         # self.histtz[tickerId] = tz
-
+        #+ ' US/Eastern'
         histdata = self.ib.reqHistoricalData(
                             contract,
-                            enddate.strftime('%Y%m%d %H:%M:%S') + ' US/Eastern',
+                            enddate.strftime('%Y%m%d-%H:%M:%S') ,
                             duration,
                             barsize,
                             what,
