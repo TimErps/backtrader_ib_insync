@@ -478,7 +478,7 @@ class IBStore(with_metaclass(MetaSingleton, object)):
 
         histdata = self.ib.reqHistoricalData(
                                 contract,
-                                intdate.strftime('%Y%m%d %H:%M:%S') + ' GMT',
+                                intdate.strftime('%Y%m%d %H:%M:%S') + ' US/Eastern',
                                 duration,
                                 barsize,
                                 what,
@@ -514,7 +514,7 @@ class IBStore(with_metaclass(MetaSingleton, object)):
 
         histdata = self.ib.reqHistoricalData(
                             contract,
-                            enddate.strftime('%Y%m%d %H:%M:%S') + ' GMT',
+                            enddate.strftime('%Y%m%d %H:%M:%S') + ' US/Eastern',
                             duration,
                             barsize,
                             what,
